@@ -810,33 +810,48 @@
       .hero-scroll-hint { animation: none; }
     }
 
-    /* スマートフォン: 動画全体を表示・テキストをコンパクトに */
+    /* スマートフォン: 動画全体を余白なしで表示 */
     @media (max-width: 768px) {
-      #hero video {
-        object-fit: contain;
-        background: var(--color-bg-void);
+      /* ヒーローをビデオと同じ16:9比率に合わせる
+         → coverでぴったり埋まるためクロップなし・レターボックスなし */
+      #hero {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
       }
 
+      #hero video {
+        object-fit: cover; /* コンテナと同比率なので全体が表示される */
+      }
+
+      /* ヒーローが低くなる分テキストをコンパクトに配置 */
       .hero-content {
-        padding: 0 1.25rem;
+        padding: 0 1rem;
       }
 
       .hero-eyebrow {
-        margin-bottom: 0.75rem;
-      }
-
-      .hero-title {
-        font-size: clamp(1.6rem, 7vw, 3rem);
-        margin-bottom: 1rem;
-      }
-
-      .hero-tagline {
-        font-size: 0.9rem;
+        font-size: 9px;
         margin-bottom: 0.4rem;
       }
 
-      .hero-subcopy {
+      .hero-title {
+        font-size: clamp(1.4rem, 5.5vw, 2.5rem);
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-tagline {
         font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.25rem;
+      }
+
+      .hero-subcopy {
+        font-size: 0.7rem;
+      }
+
+      /* 低いヒーローではスクロールヒントを非表示 */
+      .hero-scroll-hint {
+        display: none;
       }
     }
 
