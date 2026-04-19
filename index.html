@@ -810,6 +810,36 @@
       .hero-scroll-hint { animation: none; }
     }
 
+    /* スマートフォン: 動画全体を表示・テキストをコンパクトに */
+    @media (max-width: 768px) {
+      #hero video {
+        object-fit: contain;
+        background: var(--color-bg-void);
+      }
+
+      .hero-content {
+        padding: 0 1.25rem;
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 0.75rem;
+      }
+
+      .hero-title {
+        font-size: clamp(1.6rem, 7vw, 3rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .hero-subcopy {
+        font-size: 0.8rem;
+      }
+    }
+
     /* ============================================================
        CONCEPT
     ============================================================ */
