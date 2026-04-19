@@ -9,7 +9,7 @@
   <meta property="og:title" content="New Club Uru — 徳島の夜に、上質な時間を。">
   <meta property="og:description" content="ブルーLEDが照らす、徳島秋田町のナイトクラブ。特別な夜のご予約はInstagram @new_club_uru まで。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="./assets/1.jpg">
+  <meta property="og:image" content="./1.jpg">
   <meta name="theme-color" content="#0A0A0A">
 
   <!-- Preconnect for Google Fonts -->
@@ -1573,11 +1573,11 @@
         muted
         loop
         playsinline
-        poster="./assets/1.jpg"
+        poster="./1.jpg"
         aria-hidden="true"
         preload="auto"
       >
-        <source src="./assets/club_uru_5images_final.mp4" type="video/mp4">
+        <source src="./club_uru_5images_final.mp4" type="video/mp4">
       </video>
 
       <div class="hero-ambient" aria-hidden="true"></div>
@@ -1604,7 +1604,7 @@
         <!-- Left: Photo -->
         <div class="concept-image-col" data-animate>
           <img
-            src="./assets/6.jpg"
+            src="./6.jpg"
             alt="桜の装飾ツリーが柱に絡まるNew Club Uruの店内全景。高いドラマ性と非日常の空間を一枚に凝縮した印象的なショット。"
             loading="lazy"
           >
@@ -1660,7 +1660,7 @@
         <!-- 1: VIP Booth -->
         <div class="gallery-item" data-animate>
           <img
-            src="./assets/1.jpg"
+            src="./1.jpg"
             alt="VIPボックス席とNew Club Uruの発光ロゴサイン。黒い六角形壁とブルーLEDテーブルラインが高級感を演出。"
             loading="lazy"
           >
@@ -1673,7 +1673,7 @@
         <!-- 2: Main Floor -->
         <div class="gallery-item" data-animate data-animate-delay="1">
           <img
-            src="./assets/2.jpg"
+            src="./2.jpg"
             alt="複数のブースが並ぶメインフロア全体。壁面を彩るクリスタル飾りが空間全体に輝きを添える。"
             loading="lazy"
           >
@@ -1686,7 +1686,7 @@
         <!-- 3: Counter / Bottle Cellar -->
         <div class="gallery-item" data-animate data-animate-delay="2">
           <img
-            src="./assets/3.jpg"
+            src="./3.jpg"
             alt="手前にカウンター席、奥にボトルセラーが並ぶカウンターエリア。スタイリッシュな間取りが際立つ。"
             loading="lazy"
           >
@@ -1699,7 +1699,7 @@
         <!-- 4: Box Seat -->
         <div class="gallery-item" data-animate data-animate-delay="1">
           <img
-            src="./assets/4.jpg"
+            src="./4.jpg"
             alt="ボックス席からボトルセラーを望む構図。ブルーLEDアクセントが空間に深みと高級感を与える。"
             loading="lazy"
           >
@@ -1712,7 +1712,7 @@
         <!-- 5: Signature Booth -->
         <div class="gallery-item" data-animate data-animate-delay="2">
           <img
-            src="./assets/5.jpg"
+            src="./5.jpg"
             alt="クリスタル壁飾りとLEDラインが美しいシグネチャーボックス席。店内で最も洗練されたプレミアムシート。"
             loading="lazy"
           >
@@ -2011,47 +2011,40 @@
     (function initAgeGate() {
       var gate = document.getElementById('age-gate');
       var confirmBtn = document.getElementById('age-confirm');
+      var loader = document.getElementById('loader');
 
       if (!gate || !confirmBtn) return;
 
-      // Bypass if already verified in this session
+      // 2回目以降の訪問: age gateをスキップ（loaderは通常通り動作）
       if (sessionStorage.getItem('age_verified') === 'true') {
-        gate.classList.add('is-hidden');
+        gate.style.display = 'none';
         return;
       }
 
-      // Make sure gate is visible
+      // 初回訪問: loaderを即座に非表示にしてage gateのみ表示
+      if (loader) {
+        loader.style.display = 'none';
+      }
       gate.style.display = 'flex';
 
-      // Auto-focus confirm button
       setTimeout(function() { confirmBtn.focus(); }, 300);
 
-      // Confirm handler
+      // 確認ボタン: 押したら即座にage gateを消してページを表示
       confirmBtn.addEventListener('click', function() {
         sessionStorage.setItem('age_verified', 'true');
-        gate.style.transition = 'opacity 0.6s ease';
-        gate.style.opacity = '0';
-        setTimeout(function() {
-          gate.classList.add('is-hidden');
-        }, 650);
+        gate.style.display = 'none';
       });
 
-      // Keyboard trap within dialog for accessibility
+      // Keyboard trap
       gate.addEventListener('keydown', function(e) {
         if (e.key !== 'Tab') return;
         var focusable = Array.from(gate.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])'));
         var first = focusable[0];
         var last = focusable[focusable.length - 1];
         if (e.shiftKey) {
-          if (document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          }
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
         } else {
-          if (document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
       });
     })();
