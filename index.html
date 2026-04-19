@@ -2035,11 +2035,11 @@
       confirmBtn.addEventListener('click', function() {
         sessionStorage.setItem('age_verified', 'true');
 
-        // 動画を即時再生してバッファリングを開始
+        // 動画バッファリング開始
         var heroVideo = document.querySelector('#hero video');
         if (heroVideo) { heroVideo.play().catch(function(){}); }
 
-        // Step 1: age gateを素早くフェードアウト（0.35秒）
+        // Step 1: age gateをフェードアウト（0.35秒）
         gate.style.transition = 'opacity 0.35s ease';
         gate.classList.add('is-fading');
 
@@ -2047,21 +2047,19 @@
           gate.style.display = 'none';
 
           if (loader) {
-            // Step 2: ローダーを復元して表示
-            loader.classList.remove('is-hidden');
-            loader.style.removeProperty('display');
-            loader.style.opacity = '1';
-            loader.style.visibility = 'visible';
+            // Step 2: ローダーを表示
+            // initLoader()は初回訪問時にスキップされているため、タイマー競合なし
+            loader.style.display = 'flex';
 
-            // CSSアニメーションをリスタート（display:none後に再表示すると自動リセットされる）
-            var animated = loader.querySelectorAll('.loader-logo, .loader-sub, .loader-bar-fill');
-            animated.forEach(function(el) {
-              el.style.animationName = 'none';
-              void el.offsetWidth; // reflow強制
-              el.style.animationName = '';
-            });
+            // Step 3: .loader-innerをクローン置換 → CSSアニメーションをゼロからリスタート
+            // Chrome/Safari両対応: 新規DOM挿入が最も確実にアニメーションをリセットする
+            var loaderInner = loader.querySelector('.loader-inner');
+            if (loaderInner) {
+              var clone = loaderInner.cloneNode(true);
+              loaderInner.parentNode.replaceChild(clone, loaderInner);
+            }
 
-            // Step 3: アニメーション完了後（2.2秒）ローダーをフェードアウト
+            // Step 4: アニメーション完了後（2.2秒）ローダーをフェードアウト
             setTimeout(function() {
               loader.classList.add('is-hidden');
               setTimeout(function() {
@@ -2092,6 +2090,11 @@
     (function initLoader() {
       var loader = document.getElementById('loader');
       if (!loader) return;
+
+      // 初回訪問時（age gate表示中）はage gateがloaderを管理するためスキップ
+      // スキップしないと自動非表示タイマーがage gate confirm後のローダー表示と競合する
+      var ageGate = document.getElementById('age-gate');
+      if (ageGate && sessionStorage.getItem('age_verified') !== 'true') return;
 
       function hideLoader() {
         loader.classList.add('is-hidden');
