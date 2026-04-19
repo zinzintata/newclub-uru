@@ -437,8 +437,10 @@
       justify-content: center;
       padding: 2rem;
       animation: fade-in 0.5s ease both;
+      transition: opacity 0.7s ease;
     }
     #age-gate.is-hidden { display: none; }
+    #age-gate.is-fading { opacity: 0; pointer-events: none; }
 
     .age-gate-inner {
       text-align: center;
@@ -2029,10 +2031,45 @@
 
       setTimeout(function() { confirmBtn.focus(); }, 300);
 
-      // 確認ボタン: 押したら即座にage gateを消してページを表示
+      // 確認ボタン: age gateフェード → ローダー再生 → ページ表示
       confirmBtn.addEventListener('click', function() {
         sessionStorage.setItem('age_verified', 'true');
-        gate.style.display = 'none';
+
+        // 動画を即時再生してバッファリングを開始
+        var heroVideo = document.querySelector('#hero video');
+        if (heroVideo) { heroVideo.play().catch(function(){}); }
+
+        // Step 1: age gateを素早くフェードアウト（0.35秒）
+        gate.style.transition = 'opacity 0.35s ease';
+        gate.classList.add('is-fading');
+
+        setTimeout(function() {
+          gate.style.display = 'none';
+
+          if (loader) {
+            // Step 2: ローダーを復元して表示
+            loader.classList.remove('is-hidden');
+            loader.style.removeProperty('display');
+            loader.style.opacity = '1';
+            loader.style.visibility = 'visible';
+
+            // CSSアニメーションをリスタート（display:none後に再表示すると自動リセットされる）
+            var animated = loader.querySelectorAll('.loader-logo, .loader-sub, .loader-bar-fill');
+            animated.forEach(function(el) {
+              el.style.animationName = 'none';
+              void el.offsetWidth; // reflow強制
+              el.style.animationName = '';
+            });
+
+            // Step 3: アニメーション完了後（2.2秒）ローダーをフェードアウト
+            setTimeout(function() {
+              loader.classList.add('is-hidden');
+              setTimeout(function() {
+                loader.style.display = 'none';
+              }, 750);
+            }, 2200);
+          }
+        }, 400);
       });
 
       // Keyboard trap
