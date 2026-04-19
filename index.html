@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Club Uru（ニュークラブ ウル）｜徳島 秋田町のナイトクラブ</title>
+  <meta name="description" content="徳島市秋田町に位置するナイトクラブ「New Club Uru（ニュークラブ ウル）」。ブルーLEDが灯す洗練された空間で、大人の夜を。VIPブース完備。ご予約・お問い合わせはInstagram DMにて承ります。">
+  <meta name="keywords" content="徳島キャバクラ,徳島市キャバクラ,徳島ナイトクラブ,徳島秋田町,New Club Uru,ニュークラブウル,徳島接待,徳島VIPルーム">
+  <meta property="og:title" content="New Club Uru — 徳島の夜に、上質な時間を。">
+  <meta property="og:description" content="ブルーLEDが照らす、徳島秋田町のナイトクラブ。特別な夜のご予約はInstagram @new_club_uru まで。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./1.jpg">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans-ja);
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+      border: none;
+      background: none;
+    }
+
+    /* ============================================================
+       DESIGN TOKENS (CSS CUSTOM PROPERTIES)
+    ============================================================ */
+    :root {
+      --bg: #0A0A0A;
+      --bg-card: #141414;
+      --bg-section: #0E0E0E;
+      --bg-glass: rgba(20, 20, 20, 0.85);
+      --gold: #C9A961;
+      --gold-light: #E2C882;
+      --gold-dim: rgba(201, 169, 97, 0.12);
+      --gold-border: rgba(201, 169, 97, 0.25);
+      --text: #F5F0E6;
+      --text-muted: #9A9080;
+      --text-faint: #5A5040;
+      --font-serif-en: 'Cormorant Garamond', Georgia, serif;
+      --font-serif-ja: 'Noto Serif JP', serif;
+      --font-sans-en: 'Montserrat', sans-serif;
+      --font-sans-ja: 'Noto Sans JP', sans-serif;
+      --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-elegant: cubic-bezier(0.4, 0, 0.2, 1);
+      --section-py: clamp(80px, 12vw, 160px);
+      --section-px: clamp(24px, 8vw, 120px);
+      --content-max: 1100px;
+      /* Extended tokens */
+      --color-bg-void: #050508;
+      --color-bg-primary: #0a0b10;
+      --color-gold-bright: #d4af6a;
+      --color-gold-mid: #c9a84c;
+      --color-gold-muted: #a68a3a;
+      --color-gold-dim: #6b5920;
+      --color-blue-core: #4870c8;
+      --color-blue-bright: #6b94e0;
+      --color-blue-glow: rgba(72, 112, 200, 0.35);
+      --color-blue-ambient: rgba(72, 112, 200, 0.10);
+      --color-text-primary: #f0eeea;
+      --color-text-secondary: #b8b4ac;
+      --color-text-muted: #706c64;
+      --gradient-gold: linear-gradient(135deg, #d4af6a 0%, #c9a84c 40%, #a68a3a 100%);
+      --gradient-gold-shimmer: linear-gradient(90deg, #a68a3a 0%, #d4af6a 30%, #f0d080 50%, #d4af6a 70%, #a68a3a 100%);
+      --shadow-led-blue: 0 0 8px rgba(72, 112, 200, 0.6), 0 0 20px rgba(72, 112, 200, 0.35), 0 0 40px rgba(72, 112, 200, 0.15);
+    }
+
+    /* ============================================================
+       SKIP LINK
+    ============================================================ */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 0.5rem 1rem;
+      z-index: 10000;
+      font-family: var(--font-sans-ja);
+      font-size: 0.875rem;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ============================================================
+       KEYFRAME ANIMATIONS
+    ============================================================ */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes gold-shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes loader-fade-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes loader-bar-progress {
+      0%   { width: 0%; }
+      60%  { width: 75%; }
+      100% { width: 100%; }
+    }
+
+    @keyframes scroll-hint-float {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+      50% { transform: translateX(-50%) translateY(8px); opacity: 0.9; }
+    }
+
+    @keyframes hero-ken-burns {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.00); }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ============================================================
+       SHIMMER TEXT
+    ============================================================ */
+    .text-shimmer {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 40%, #fff8e7 50%, var(--gold-light) 60%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    .text-gold-shimmer {
+      background: var(--gradient-gold-shimmer);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gold-shimmer 4s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .text-shimmer,
+      .text-gold-shimmer {
+        background: var(--gradient-gold);
+        background-size: 100% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: none;
+      }
+    }
+
+    /* ============================================================
+       SCROLL ANIMATION
+    ============================================================ */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s var(--ease-cinematic), transform 0.9s var(--ease-cinematic);
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="1"] { transition-delay: 0.15s; }
+    [data-animate-delay="2"] { transition-delay: 0.30s; }
+    [data-animate-delay="3"] { transition-delay: 0.45s; }
+    [data-animate-delay="4"] { transition-delay: 0.60s; }
+    [data-animate-delay="5"] { transition-delay: 0.75s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* ============================================================
+       GLASS CARD
+    ============================================================ */
+    .glass-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--gold-border);
+    }
+
+    @supports not (backdrop-filter: blur(1px)) {
+      .glass-card {
+        background: rgba(14, 14, 14, 0.95);
+      }
+    }
+
+    /* ============================================================
+       SHARED SECTION ELEMENTS
+    ============================================================ */
+    .section-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      display: block;
+      font-family: var(--font-sans-en);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .section-heading-ja {
+      font-family: var(--font-serif-ja);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .section-heading-en {
+      font-family: var(--font-serif-en);
+      font-size: clamp(18px, 2.5vw, 30px);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      color: var(--color-gold-muted);
+      margin-top: 0.6rem;
+    }
+
+    .gold-line {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 2rem;
+    }
+
+    .gold-line-left {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0 0 1.75rem;
+    }
+
+    /* CTA Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #050508;
+      background: var(--gradient-gold);
+      border: none;
+      cursor: pointer;
+      min-height: 48px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease, filter 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      filter: brightness(1.12);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35), 0 0 40px rgba(201, 168, 76, 0.15);
+    }
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      cursor: pointer;
+      min-height: 48px;
+      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      background: rgba(201, 169, 97, 0.08);
+      box-shadow: 0 0 20px rgba(201, 169, 97, 0.20);
+      border-color: var(--gold);
+    }
+    .btn-outline:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+
+    /* Focus ring */
+    :focus-visible {
+      outline: 2px solid var(--color-blue-bright);
+      outline-offset: 3px;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-border); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+    /* ============================================================
+       LOADER
+    ============================================================ */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--color-bg-void);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9998;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    #loader.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-inner { text-align: center; }
+
+    .loader-logo {
+      display: block;
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.75rem, 5vw, 2.8rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.2em;
+      animation: loader-fade-in 0.8s ease 0.3s both, gold-shimmer 4s linear 0.3s infinite;
+      background: var(--gradient-gold-shimmer);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .loader-sub {
+      display: block;
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-top: 0.75rem;
+      animation: loader-fade-in 0.8s ease 0.7s both;
+    }
+
+    .loader-bar {
+      margin-top: 2.5rem;
+      width: 120px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .loader-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--gradient-gold);
+      animation: loader-bar-progress 1.6s var(--ease-elegant) 0.4s forwards;
+    }
+
+    /* ============================================================
+       AGE GATE
+    ============================================================ */
+    #age-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #080808;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fade-in 0.5s ease both;
+    }
+    #age-gate.is-hidden { display: none; }
+
+    .age-gate-inner {
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .age-gate-logo {
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.15em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .age-gate-place {
+      font-family: var(--font-serif-en);
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      display: block;
+      margin-bottom: 2.5rem;
+    }
+
+    .age-gate-divider {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
+      margin: 0 auto 2.5rem;
+    }
+
+    .age-gate-title {
+      font-family: var(--font-serif-ja);
+      font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      line-height: 1.8;
+    }
+
+    .age-gate-text {
+      font-family: var(--font-sans-ja);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .age-gate-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .age-btn-enter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 280px;
+      min-height: 52px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 14px 2rem;
+      font-family: var(--font-sans-en);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .age-btn-enter:hover { background: var(--gold); color: #050508; }
+    .age-btn-enter:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+
+    .age-btn-leave {
+      display: inline-block;
+      color: var(--text-faint);
+      font-family: var(--font-sans-ja);
+      font-size: 12px;
+      font-weight: 300;
+      background: transparent;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      padding: 8px;
+      min-height: 44px;
+    }
+    .age-btn-leave:hover { color: var(--text-muted); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.25rem var(--section-px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding-top: 0.85rem;
+      padding-bottom: 0.85rem;
+      border-bottom-color: var(--gold-dim);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      flex-shrink: 0;
+    }
+    .nav-logo:hover { color: var(--gold-light); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+      padding-bottom: 3px;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gradient-gold);
+      transition: width 0.35s var(--ease-elegant);
+    }
+    .nav-link:hover { color: var(--color-gold-bright); }
+    .nav-link:hover::after,
+    .nav-link[aria-current="page"]::after { width: 100%; }
+    .nav-link[aria-current="page"] { color: var(--color-gold-bright); }
+
+    .nav-instagram {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-sans-en);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.25s ease;
+    }
+    .nav-instagram:hover { color: var(--gold); transform: translateY(-1px); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--text);
+      transition: transform 0.3s var(--ease-elegant), opacity 0.3s ease, width 0.3s ease;
+    }
+    .nav-hamburger.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Mobile menu overlay */
+    .nav-mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 5, 8, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .nav-mobile-menu.is-open { opacity: 1; visibility: visible; }
+
+    .nav-mobile-link {
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .nav-mobile-link:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-instagram { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: hero-ken-burns 14s var(--ease-cinematic) forwards;
+      will-change: transform;
+    }
+
+    /* Overlay */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.85) 100%);
+      z-index: 1;
+    }
+
+    .hero-ambient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 70%, rgba(72, 112, 200, 0.10) 0%, transparent 70%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 0 clamp(1rem, 5vw, 3rem);
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      display: block;
+      font-family: var(--font-sans-en);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--color-gold-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif-en);
+      font-size: clamp(3.5rem, 12vw, 9rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif-ja);
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subcopy {
+      font-family: var(--font-serif-en);
+      font-size: clamp(0.875rem, 1.5vw, 1.1rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      animation: scroll-hint-float 2.8s ease-in-out infinite;
+    }
+    .hero-scroll-hint span {
+      font-family: var(--font-sans-en);
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #hero video { animation: none; transform: scale(1); }
+      .hero-scroll-hint { animation: none; }
+    }
+
+    /* ============================================================
+       CONCEPT
+    ============================================================ */
+    #concept {
+      background: var(--bg-section);
+      overflow: hidden;
+    }
+
+    .concept-layout {
+      display: grid;
+      grid-template-columns: 55% 45%;
+    }
+
+    .concept-image-col {
+      position: relative;
+      overflow: hidden;
+      min-height: 580px;
+    }
+
+    .concept-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.80) saturate(0.88);
+      transition: transform 1s var(--ease-cinematic), filter 0.8s ease;
+    }
+
+    .concept-image-col:hover img {
+      transform: scale(1.03);
+      filter: brightness(0.85) saturate(0.95);
+    }
+
+    .concept-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+      background: var(--bg-section);
+    }
+
+    .concept-body {
+      font-family: var(--font-sans-ja);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 2.0;
+      letter-spacing: 0.04em;
+      color: var(--color-text-secondary);
+      margin-top: 1.75rem;
+    }
+
+    .concept-body p + p { margin-top: 1.25rem; }
+
+    .concept-pillars {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gold-border);
+    }
+
+    .concept-pillar { flex: 1; text-align: center; }
+
+    .concept-pillar-en {
+      display: block;
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .concept-pillar-ja {
+      display: block;
+      font-family: var(--font-serif-ja);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .concept-layout { grid-template-columns: 1fr; }
+      .concept-image-col { min-height: 300px; }
+      .concept-pillars { flex-direction: column; gap: 1rem; }
+      .concept-pillar { display: flex; align-items: center; gap: 1rem; text-align: left; }
+    }
+
+    /* ============================================================
+       SPACE / GALLERY
+    ============================================================ */
+    #space {
+      background: var(--bg);
+      padding: var(--section-py) var(--section-px);
+    }
+
+    .space-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: var(--content-max);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 10px;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.00);
+      filter: brightness(0.80) saturate(0.85);
+      transition:
+        transform 0.8s var(--ease-cinematic),
+        filter 0.8s var(--ease-cinematic);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.90) saturate(1.05);
+    }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(72, 112, 200, 0.20) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .gallery-item:hover::after { opacity: 1; }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.75rem 1.25rem 1.25rem;
+      background: linear-gradient(to top, rgba(5,5,8,0.88) 0%, transparent 100%);
+      z-index: 2;
+    }
+
+    .gallery-caption-en {
+      display: block;
+      font-family: var(--font-sans-en);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--color-gold-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .gallery-caption-ja {
+      display: block;
+      font-family: var(--font-serif-ja);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--text);
+    }
+
+    /* Asymmetric grid */
+    .gallery-item:nth-child(1) { grid-column: 1 / 8; grid-row: 1; aspect-ratio: 16/10; }
+    .gallery-item:nth-child(2) { grid-column: 8 / 13; grid-row: 1; aspect-ratio: 4/5; }
+    .gallery-item:nth-child(3) { grid-column: 1 / 6; grid-row: 2; aspect-ratio: 4/5; }
+    .gallery-item:nth-child(4) { grid-column: 6 / 10; grid-row: 2; aspect-ratio: 1/1; }
+    .gallery-item:nth-child(5) { grid-column: 10 / 13; grid-row: 2; aspect-ratio: 1/1; }
+
+    @media (max-width: 1024px) {
+      .space-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .gallery-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 16/9; }
+      .gallery-item:nth-child(2) { grid-column: 1 / 2; grid-row: 2; aspect-ratio: 1/1; }
+      .gallery-item:nth-child(3) { grid-column: 2 / 3; grid-row: 2; aspect-ratio: 1/1; }
+      .gallery-item:nth-child(4) { grid-column: 1 / 2; grid-row: 3; aspect-ratio: 1/1; }
+      .gallery-item:nth-child(5) { grid-column: 2 / 3; grid-row: 3; aspect-ratio: 1/1; }
+    }
+
+    @media (max-width: 480px) {
+      .space-grid { grid-template-columns: 1fr; gap: 6px; }
+      .gallery-item:nth-child(n) {
+        grid-column: 1; grid-row: auto; aspect-ratio: 4/3;
+      }
+    }
+
+    /* ============================================================
+       INSTAGRAM CTA
+    ============================================================ */
+    #instagram {
+      background: var(--bg-section);
+      padding: var(--section-py) var(--section-px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #instagram::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpolygon points='28,2 54,16 54,44 28,58 2,44 2,16' fill='none' stroke='%23C9A961' stroke-width='0.4' stroke-opacity='0.05'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      pointer-events: none;
+    }
+
+    .instagram-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .instagram-handle {
+      display: inline-block;
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      color: var(--color-gold-bright);
+      margin: 1.5rem 0;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    .instagram-handle:hover { color: var(--gold-light); }
+
+    .instagram-body {
+      font-family: var(--font-sans-ja);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .instagram-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .instagram-hashtags {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .instagram-hashtag {
+      font-family: var(--font-sans-ja);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--text-faint);
+    }
+
+    /* ============================================================
+       ACCESS
+    ============================================================ */
+    #access {
+      background: var(--bg);
+      padding: var(--section-py) var(--section-px);
+    }
+
+    .access-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .access-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .access-store-name {
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .access-store-name-ja {
+      font-family: var(--font-serif-ja);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .access-detail-block {
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .access-detail-label {
+      display: block;
+      font-family: var(--font-sans-en);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 0.4rem;
+    }
+
+    .access-detail-value {
+      font-family: var(--font-sans-ja);
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .access-detail-note {
+      display: block;
+      font-family: var(--font-sans-ja);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-faint);
+      letter-spacing: 0.03em;
+      margin-top: 0.35rem;
+    }
+
+    .access-map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold-muted);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .access-map-link:hover { color: var(--gold-light); }
+
+    .access-map-wrapper {
+      position: relative;
+      border: 1px solid var(--gold-border);
+      overflow: hidden;
+    }
+
+    .access-map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 400px;
+      border: 0;
+      filter: grayscale(80%) invert(90%) brightness(82%);
+    }
+
+    .access-floor-badge {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid var(--gold-border);
+      padding: 0.5rem 0.875rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .access-floor-badge-num {
+      font-family: var(--font-serif-en);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+
+    .access-floor-badge-text {
+      font-family: var(--font-sans-en);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .access-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      background: var(--bg-section);
+      padding: var(--section-py) var(--section-px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpolygon points='28,2 54,16 54,44 28,58 2,44 2,16' fill='none' stroke='%23C9A961' stroke-width='0.4' stroke-opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 56px 100px;
+      pointer-events: none;
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .contact-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-body {
+      font-family: var(--font-sans-ja);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.95;
+      letter-spacing: 0.04em;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .contact-cta-id {
+      display: inline-block;
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-gold-bright);
+      letter-spacing: 0.05em;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.3s ease;
+      margin-top: 0.75rem;
+    }
+    .contact-cta-id:hover { color: var(--gold-light); }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--color-bg-void);
+      padding: 4rem var(--section-px) 2rem;
+      border-top: 1px solid var(--gold-dim);
+    }
+
+    .footer-inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo-block {}
+
+    .footer-logo {
+      font-family: var(--font-serif-en);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      color: var(--color-gold-muted);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.35rem;
+      transition: color 0.3s ease;
+    }
+    .footer-logo:hover { color: var(--color-gold-bright); }
+
+    .footer-place {
+      font-family: var(--font-sans-en);
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-nav-link {
+      font-family: var(--font-serif-en);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-nav-link:hover { color: var(--color-gold-bright); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-address {
+      font-family: var(--font-sans-ja);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+      font-style: normal;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .footer-instagram-link {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-sans-en);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--text-faint);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.25s ease;
+    }
+    .footer-instagram-link:hover { color: var(--gold); transform: translateY(-2px); }
+
+    .footer-copyright {
+      font-family: var(--font-sans-ja);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 640px) {
+      .footer-top { flex-direction: column; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .footer-right { align-items: flex-start; }
+    }
+
+    /* ============================================================
+       FIXED CTA
+    ============================================================ */
+    #fixed-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--gold-border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: env(safe-area-inset-bottom);
+      transform: translateY(100%);
+      transition: transform 0.4s var(--ease-cinematic);
+    }
+    #fixed-cta.is-visible { transform: translateY(0); }
+
+    .fixed-cta-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-height: 64px;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      border: none;
+      background: none;
+      width: 100%;
+    }
+    .fixed-cta-btn:hover { background: var(--gold-dim); }
+    .fixed-cta-btn:first-child { border-right: 1px solid var(--gold-border); }
+    .fixed-cta-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+
+    .fixed-cta-icon-ig { color: var(--gold); }
+    .fixed-cta-icon-map { color: var(--text-muted); transition: color 0.3s ease; }
+    .fixed-cta-btn:hover .fixed-cta-icon-map { color: var(--gold); }
+
+    .fixed-cta-label {
+      font-family: var(--font-sans-ja);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">コンテンツにスキップ</a>
+
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div id="loader" aria-hidden="true" role="presentation">
+    <div class="loader-inner">
+      <span class="loader-logo">New Club Uru</span>
+      <span class="loader-sub">— Tokushima —</span>
+      <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       AGE GATE
+  ============================================================ -->
+  <div id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+    <div class="age-gate-inner">
+      <span class="age-gate-logo text-shimmer">New Club Uru</span>
+      <span class="age-gate-place">Tokushima Nightclub</span>
+      <div class="age-gate-divider"></div>
+      <p class="age-gate-title" id="age-gate-title">このサイトは18歳未満の方の<br>閲覧をお断りしております。</p>
+      <p class="age-gate-text">あなたは18歳以上ですか？<br>年齢を確認のうえ、お進みください。</p>
+      <div class="age-gate-buttons">
+        <button class="age-btn-enter" id="age-confirm">18歳以上の方はこちら</button>
+        <a href="https://www.google.co.jp/" class="age-btn-leave">退場する（18歳未満の方）</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="site-nav" aria-label="メインナビゲーション">
+    <a href="#hero" class="nav-logo" aria-label="New Club Uru トップへ">Uru</a>
+
+    <div class="nav-right">
+      <ul class="nav-links" role="list">
+        <li><a href="#concept" class="nav-link">Concept</a></li>
+        <li><a href="#space" class="nav-link">Space</a></li>
+        <li><a href="#instagram" class="nav-link">Instagram</a></li>
+        <li><a href="#access" class="nav-link">Access</a></li>
+      </ul>
+
+      <a
+        href="https://www.instagram.com/new_club_uru/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-instagram"
+        aria-label="New Club Uru Instagram（新しいタブで開く）"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Instagram</span>
+      </a>
+
+      <button
+        class="nav-hamburger"
+        id="hamburger"
+        aria-label="メニューを開く"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="nav-mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a href="#concept" class="nav-mobile-link" data-mobile-close>Concept</a>
+    <a href="#space" class="nav-mobile-link" data-mobile-close>Space</a>
+    <a href="#instagram" class="nav-mobile-link" data-mobile-close>Instagram</a>
+    <a href="#access" class="nav-mobile-link" data-mobile-close>Access</a>
+    <a href="#contact" class="nav-mobile-link" data-mobile-close>Contact</a>
+    <a
+      href="https://www.instagram.com/new_club_uru/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-mobile-link"
+      style="color: var(--gold);"
+      aria-label="Instagram @new_club_uru（新しいタブで開く）"
+    >@new_club_uru</a>
+  </div>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main id="main">
+
+    <!-- ■ 01 HERO ■ -->
+    <section id="hero" aria-label="ファーストビュー">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="./1.jpg"
+        aria-hidden="true"
+        preload="auto"
+      >
+        <source src="./club_uru_5images_final.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero-ambient" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <span class="hero-eyebrow" data-animate>Tokushima Nightclub</span>
+        <h1 class="hero-title text-shimmer" data-animate data-animate-delay="1">New Club Uru</h1>
+        <p class="hero-tagline" data-animate data-animate-delay="2">徳島の夜に、上質な時間を。</p>
+        <p class="hero-subcopy" data-animate data-animate-delay="3">A night of quiet luxury, only in Tokushima.</p>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <svg width="14" height="18" viewBox="0 0 14 18" fill="none" stroke="var(--text-faint)" stroke-width="1.2">
+          <path d="M7 1v12M3 9l4 4 4-4"/>
+        </svg>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <!-- ■ 02 CONCEPT ■ -->
+    <section id="concept" aria-labelledby="concept-heading">
+      <div class="concept-layout">
+
+        <!-- Left: Photo -->
+        <div class="concept-image-col" data-animate>
+          <img
+            src="./6.jpg"
+            alt="桜の装飾ツリーが柱に絡まるNew Club Uruの店内全景。高いドラマ性と非日常の空間を一枚に凝縮した印象的なショット。"
+            loading="lazy"
+          >
+        </div>
+
+        <!-- Right: Text -->
+        <div class="concept-text-col">
+          <span class="section-eyebrow" data-animate>Concept</span>
+          <div class="gold-line-left" data-animate data-animate-delay="1" aria-hidden="true"></div>
+          <h2 class="section-heading-ja" id="concept-heading" data-animate data-animate-delay="1">
+            この夜だけの、<br>特別な場所へ。
+          </h2>
+          <p class="section-heading-en" data-animate data-animate-delay="2">A place apart from the ordinary</p>
+
+          <div class="concept-body" data-animate data-animate-delay="2">
+            <p>徳島市秋田町に、静かに灯る一軒がある。</p>
+            <p>ブルーLEDが縁を描くテーブル。黒の六角形が刻まれた壁。ブラックレザーが包む、奥まった席。</p>
+            <p>喧騒を離れ、ここだけの夜をつくる——<br>New Club Uruは、そんな時間のための場所です。</p>
+            <p>特別なひとと、あるいは自分へのご褒美に。<br>徳島の夜に、上質な時間を。</p>
+          </div>
+
+          <div class="concept-pillars" data-animate data-animate-delay="3">
+            <div class="concept-pillar">
+              <span class="concept-pillar-en">Space</span>
+              <span class="concept-pillar-ja">洗練の空間</span>
+            </div>
+            <div class="concept-pillar">
+              <span class="concept-pillar-en">Mood</span>
+              <span class="concept-pillar-ja">深夜の静謐</span>
+            </div>
+            <div class="concept-pillar">
+              <span class="concept-pillar-en">Time</span>
+              <span class="concept-pillar-ja">格別な一夜</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ■ 03 SPACE ■ -->
+    <section id="space" aria-labelledby="space-heading">
+
+      <div class="space-header">
+        <span class="section-eyebrow" data-animate>Space</span>
+        <div class="gold-line" data-animate data-animate-delay="1" aria-hidden="true"></div>
+        <h2 class="section-heading-ja" id="space-heading" data-animate data-animate-delay="1">五感が解放される、夜の空間。</h2>
+        <p class="section-heading-en" data-animate data-animate-delay="2">An interior designed to delight</p>
+      </div>
+
+      <div class="space-grid">
+
+        <!-- 1: VIP Booth -->
+        <div class="gallery-item" data-animate>
+          <img
+            src="./1.jpg"
+            alt="VIPボックス席とNew Club Uruの発光ロゴサイン。黒い六角形壁とブルーLEDテーブルラインが高級感を演出。"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <span class="gallery-caption-en">VIP Booth</span>
+            <span class="gallery-caption-ja">大切な席を、特別な空間で。</span>
+          </div>
+        </div>
+
+        <!-- 2: Main Floor -->
+        <div class="gallery-item" data-animate data-animate-delay="1">
+          <img
+            src="./2.jpg"
+            alt="複数のブースが並ぶメインフロア全体。壁面を彩るクリスタル飾りが空間全体に輝きを添える。"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <span class="gallery-caption-en">Main Floor</span>
+            <span class="gallery-caption-ja">青い光が宿る席</span>
+          </div>
+        </div>
+
+        <!-- 3: Counter / Bottle Cellar -->
+        <div class="gallery-item" data-animate data-animate-delay="2">
+          <img
+            src="./3.jpg"
+            alt="手前にカウンター席、奥にボトルセラーが並ぶカウンターエリア。スタイリッシュな間取りが際立つ。"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <span class="gallery-caption-en">Bottle Cellar</span>
+            <span class="gallery-caption-ja">あなたのボトルが、ここに眠る。</span>
+          </div>
+        </div>
+
+        <!-- 4: Box Seat -->
+        <div class="gallery-item" data-animate data-animate-delay="1">
+          <img
+            src="./4.jpg"
+            alt="ボックス席からボトルセラーを望む構図。ブルーLEDアクセントが空間に深みと高級感を与える。"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <span class="gallery-caption-en">Interior Detail</span>
+            <span class="gallery-caption-ja">細部に宿る、この店の格。</span>
+          </div>
+        </div>
+
+        <!-- 5: Signature Booth -->
+        <div class="gallery-item" data-animate data-animate-delay="2">
+          <img
+            src="./5.jpg"
+            alt="クリスタル壁飾りとLEDラインが美しいシグネチャーボックス席。店内で最も洗練されたプレミアムシート。"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <span class="gallery-caption-en">Signature Booth</span>
+            <span class="gallery-caption-ja">季節が、店内に咲く。</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ■ 04 INSTAGRAM ■ -->
+    <section id="instagram" aria-labelledby="instagram-heading">
+      <div class="instagram-inner">
+
+        <span class="section-eyebrow" data-animate>Gallery</span>
+        <div class="gold-line" data-animate data-animate-delay="1" aria-hidden="true"></div>
+        <h2 class="section-heading-ja" id="instagram-heading" data-animate data-animate-delay="1">今夜の、New Club Uru。</h2>
+        <p class="section-heading-en" data-animate data-animate-delay="2">Follow us for the latest updates</p>
+
+        <a
+          href="https://www.instagram.com/new_club_uru/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="instagram-handle"
+          aria-label="Instagram @new_club_uru を見る（新しいタブで開く）"
+          data-animate
+          data-animate-delay="2"
+        >@new_club_uru</a>
+
+        <p class="instagram-body" data-animate data-animate-delay="3">
+          最新の店内の様子や季節の装飾は、<br>
+          Instagramでお届けしています。
+        </p>
+
+        <div class="instagram-cta-group" data-animate data-animate-delay="3">
+          <a
+            href="https://www.instagram.com/new_club_uru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+            aria-label="Instagramで @new_club_uru をフォローする（新しいタブで開く）"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+            @new_club_uru をフォロー
+          </a>
+          <a
+            href="https://www.instagram.com/new_club_uru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline"
+            aria-label="Instagram DM でご予約・お問い合わせ（新しいタブで開く）"
+          >
+            DM でご予約・お問い合わせ
+          </a>
+        </div>
+
+        <div class="instagram-hashtags" data-animate data-animate-delay="4" aria-hidden="true">
+          <span class="instagram-hashtag">#徳島キャバクラ</span>
+          <span class="instagram-hashtag">#NewClubUru</span>
+          <span class="instagram-hashtag">#徳島秋田町</span>
+          <span class="instagram-hashtag">#徳島ナイトクラブ</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ■ 05 ACCESS ■ -->
+    <section id="access" aria-labelledby="access-heading">
+
+      <div class="access-header">
+        <span class="section-eyebrow" data-animate>Access</span>
+        <div class="gold-line" data-animate data-animate-delay="1" aria-hidden="true"></div>
+        <h2 class="section-heading-ja" id="access-heading" data-animate data-animate-delay="1">
+          徳島市の中心で、<br>あなたを待っています。
+        </h2>
+        <p class="section-heading-en" data-animate data-animate-delay="2">Find us in the heart of Tokushima</p>
+      </div>
+
+      <div class="access-layout">
+
+        <!-- Info column -->
+        <div class="access-info" data-animate>
+          <p class="access-store-name">New Club Uru</p>
+          <p class="access-store-name-ja">ニュークラブ ウル</p>
+
+          <div class="access-detail-block">
+            <span class="access-detail-label">Address</span>
+            <p class="access-detail-value">
+              〒770-0934<br>
+              徳島県徳島市秋田町1丁目-50<br>
+              アクティ異人館 2F
+            </p>
+          </div>
+
+          <div class="access-detail-block">
+            <span class="access-detail-label">Nearest Station</span>
+            <p class="access-detail-value">JR牟岐線 阿波富田駅 より 徒歩約9分</p>
+            <span class="access-detail-note">※ 徒歩時間は目安です。道路状況によって異なる場合があります。</span>
+          </div>
+
+          <div class="access-detail-block">
+            <span class="access-detail-label">Reservation</span>
+            <p class="access-detail-value">ご予約・お問い合わせは<br>Instagram DM にて</p>
+          </div>
+
+          <a
+            href="https://maps.google.com/maps?q=徳島県徳島市秋田町1丁目-50+アクティ異人館2F"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="access-map-link"
+            aria-label="Google マップで New Club Uru の場所を見る（新しいタブで開く）"
+          >
+            Google マップで開く →
+          </a>
+        </div>
+
+        <!-- Map column -->
+        <div data-animate data-animate-delay="1">
+          <div class="access-map-wrapper glass-card">
+            <iframe
+              src="https://maps.google.com/maps?q=New+Club+Uru+%E5%BE%B3%E5%B3%B6&hl=ja&z=17&output=embed"
+              title="New Club Uru の地図 — 徳島市秋田町1丁目-50 アクティ異人館2F"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="access-floor-badge" aria-label="アクティ異人館 2階">
+              <span class="access-floor-badge-num">2F</span>
+              <span class="access-floor-badge-text">Floor</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ■ 06 CONTACT ■ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="contact-inner">
+
+        <span class="section-eyebrow" data-animate>Contact</span>
+        <div class="gold-line" data-animate data-animate-delay="1" aria-hidden="true"></div>
+
+        <div class="contact-icon" data-animate data-animate-delay="1">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="0.9" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="var(--gold)" stroke="none"/>
+          </svg>
+        </div>
+
+        <h2 class="section-heading-ja" id="contact-heading" data-animate data-animate-delay="1">
+          ご予約・お問い合わせは、<br>Instagram DMにて。
+        </h2>
+        <p class="section-heading-en" data-animate data-animate-delay="2">Reservations &amp; inquiries via Instagram DM</p>
+
+        <p class="contact-body" data-animate data-animate-delay="2">
+          ご予約やお席に関するご相談は、<br>
+          公式Instagram（@new_club_uru）の<br>
+          ダイレクトメッセージにてお気軽にどうぞ。
+        </p>
+
+        <div data-animate data-animate-delay="3">
+          <a
+            href="https://www.instagram.com/new_club_uru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+            style="min-width: 280px; margin-bottom: 1rem;"
+            aria-label="Instagram DM で New Club Uru にお問い合わせ（新しいタブで開く）"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram DM でお問い合わせ
+          </a>
+        </div>
+
+        <div data-animate data-animate-delay="4">
+          <a
+            href="https://www.instagram.com/new_club_uru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-cta-id"
+            aria-label="Instagram @new_club_uru を見る（新しいタブで開く）"
+          >
+            @new_club_uru
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-top">
+        <div class="footer-logo-block">
+          <a href="#hero" class="footer-logo">New Club Uru</a>
+          <span class="footer-place">Tokushima Nightclub</span>
+        </div>
+        <nav aria-label="フッターナビゲーション">
+          <ul class="footer-nav" role="list">
+            <li><a href="#concept" class="footer-nav-link">Concept</a></li>
+            <li><a href="#space" class="footer-nav-link">Space</a></li>
+            <li><a href="#instagram" class="footer-nav-link">Instagram</a></li>
+            <li><a href="#access" class="footer-nav-link">Access</a></li>
+            <li><a href="#contact" class="footer-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <address>
+          <p class="footer-address">
+            〒770-0934 徳島県徳島市秋田町1丁目-50 アクティ異人館2F
+          </p>
+        </address>
+        <div class="footer-right">
+          <a
+            href="https://www.instagram.com/new_club_uru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-instagram-link"
+            aria-label="New Club Uru の Instagram ページ（新しいタブで開く）"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+            @new_club_uru
+          </a>
+          <p class="footer-copyright">© 2023 New Club Uru. All rights reserved.</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FIXED CTA
+  ============================================================ -->
+  <div id="fixed-cta" role="region" aria-label="クイックアクセス">
+    <a
+      href="https://www.instagram.com/new_club_uru/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed-cta-btn"
+      aria-label="Instagram DM でお問い合わせ（新しいタブで開く）"
+    >
+      <svg class="fixed-cta-icon-ig" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="fixed-cta-label">Instagram DM</span>
+    </a>
+    <a
+      href="https://maps.google.com/maps?q=徳島県徳島市秋田町1丁目-50+アクティ異人館2F"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed-cta-btn"
+      aria-label="Google マップで場所を見る（新しいタブで開く）"
+    >
+      <svg class="fixed-cta-icon-map" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      <span class="fixed-cta-label">地図を見る</span>
+    </a>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    'use strict';
+
+    /* ==========================================
+       AGE GATE
+    ========================================== */
+    (function initAgeGate() {
+      var gate = document.getElementById('age-gate');
+      var confirmBtn = document.getElementById('age-confirm');
+
+      if (!gate || !confirmBtn) return;
+
+      // Bypass if already verified in this session
+      if (sessionStorage.getItem('age_verified') === 'true') {
+        gate.classList.add('is-hidden');
+        return;
+      }
+
+      // Make sure gate is visible
+      gate.style.display = 'flex';
+
+      // Auto-focus confirm button
+      setTimeout(function() { confirmBtn.focus(); }, 300);
+
+      // Confirm handler
+      confirmBtn.addEventListener('click', function() {
+        sessionStorage.setItem('age_verified', 'true');
+        gate.style.transition = 'opacity 0.6s ease';
+        gate.style.opacity = '0';
+        setTimeout(function() {
+          gate.classList.add('is-hidden');
+        }, 650);
+      });
+
+      // Keyboard trap within dialog for accessibility
+      gate.addEventListener('keydown', function(e) {
+        if (e.key !== 'Tab') return;
+        var focusable = Array.from(gate.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])'));
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    })();
+
+    /* ==========================================
+       LOADER
+    ========================================== */
+    (function initLoader() {
+      var loader = document.getElementById('loader');
+      if (!loader) return;
+
+      function hideLoader() {
+        loader.classList.add('is-hidden');
+        setTimeout(function() {
+          if (loader.parentNode) loader.style.display = 'none';
+        }, 750);
+      }
+
+      // Hide 2 seconds after page load (enough for bar animation to finish)
+      if (document.readyState === 'complete') {
+        setTimeout(hideLoader, 2000);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(hideLoader, 2000);
+        });
+      }
+
+      // Failsafe: force hide after 4 seconds
+      setTimeout(function() {
+        if (!loader.classList.contains('is-hidden')) {
+          hideLoader();
+        }
+      }, 4000);
+    })();
+
+    /* ==========================================
+       NAVIGATION: scroll-based background
+    ========================================== */
+    (function initNav() {
+      var nav = document.getElementById('site-nav');
+      if (!nav) return;
+
+      function updateNav() {
+        if (window.scrollY > 60) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+    })();
+
+    /* ==========================================
+       HAMBURGER MENU
+    ========================================== */
+    (function initHamburger() {
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      if (!hamburger || !mobileMenu) return;
+
+      var isOpen = false;
+
+      function openMenu() {
+        isOpen = true;
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-label', 'メニューを閉じる');
+        hamburger.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        isOpen = false;
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-label', 'メニューを開く');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (isOpen) { closeMenu(); } else { openMenu(); }
+      });
+
+      document.querySelectorAll('[data-mobile-close]').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isOpen) {
+          closeMenu();
+          hamburger.focus();
+        }
+      });
+    })();
+
+    /* ==========================================
+       SCROLL ANIMATION (Intersection Observer)
+    ========================================== */
+    (function initScrollAnimation() {
+      // Respect reduced motion preference
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        document.querySelectorAll('[data-animate]').forEach(function(el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('[data-animate]').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ==========================================
+       FIXED CTA: Visibility after hero
+    ========================================== */
+    (function initFixedCta() {
+      var fixedCta = document.getElementById('fixed-cta');
+      var hero = document.getElementById('hero');
+      if (!fixedCta || !hero) return;
+
+      function updateFixedCta() {
+        var heroRect = hero.getBoundingClientRect();
+        if (heroRect.bottom < 0) {
+          fixedCta.classList.add('is-visible');
+        } else {
+          fixedCta.classList.remove('is-visible');
+        }
+      }
+
+      window.addEventListener('scroll', updateFixedCta, { passive: true });
+      updateFixedCta();
+    })();
+
+    /* ==========================================
+       SMOOTH SCROLL for anchor links
+    ========================================== */
+    (function initSmoothScroll() {
+      var navHeight = document.getElementById('site-nav')
+        ? document.getElementById('site-nav').offsetHeight
+        : 60;
+
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            var top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+
+    /* ==========================================
+       SCROLL SPY (Nav active indicator)
+    ========================================== */
+    (function initScrollSpy() {
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+      if (!sections.length || !navLinks.length) return;
+
+      var spyObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.getAttribute('id');
+            navLinks.forEach(function(link) {
+              link.removeAttribute('aria-current');
+              if (link.getAttribute('href') === '#' + id) {
+                link.setAttribute('aria-current', 'page');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-40% 0px -40% 0px'
+      });
+
+      sections.forEach(function(section) {
+        spyObserver.observe(section);
+      });
+    })();
+
+  </script>
+
+</body>
+</html>
