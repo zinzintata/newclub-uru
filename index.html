@@ -710,7 +710,8 @@
       overflow: hidden;
     }
 
-    #hero video {
+    #hero video,
+    #hero .hero-mobile-img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -719,6 +720,13 @@
       object-position: left center;
       animation: hero-ken-burns 14s var(--ease-cinematic) forwards;
       will-change: transform;
+    }
+
+    #hero .hero-mobile-img { display: none; }
+
+    @media (max-width: 768px) {
+      #hero video { display: none; }
+      #hero .hero-mobile-img { display: block; }
     }
 
     /* Overlay */
@@ -1583,6 +1591,13 @@
       >
         <source src="./club_uru_5images_final.mp4" type="video/mp4">
       </video>
+      <img
+        class="hero-mobile-img"
+        src="./469535.jpg"
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+      />
 
       <div class="hero-ambient" aria-hidden="true"></div>
 
