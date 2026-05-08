@@ -9,7 +9,7 @@
   <meta property="og:title" content="New Club Uru — 徳島の夜に、上質な時間を。">
   <meta property="og:description" content="ブルーLEDが照らす、徳島秋田町のナイトクラブ。特別な夜のご予約はInstagram @new_club_uru まで。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="./1.jpg">
+  <meta property="og:image" content="./7.png">
   <meta name="theme-color" content="#0A0A0A">
 
   <!-- Preconnect for Google Fonts -->
@@ -147,8 +147,8 @@
     }
 
     @keyframes scroll-hint-float {
-      0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-      50% { transform: translateX(-50%) translateY(8px); opacity: 0.9; }
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(8px); opacity: 0.9; }
     }
 
     @keyframes hero-ken-burns {
@@ -702,56 +702,56 @@
     ============================================================ */
     #hero {
       position: relative;
-      height: 100svh;
-      min-height: 600px;
+      height: auto;
+      min-height: auto;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
       overflow: hidden;
+      background: var(--bg);
+      text-align: center;
     }
 
-    #hero video,
-    #hero .hero-mobile-img {
-      position: absolute;
-      inset: 0;
+    #hero .hero-media {
+      position: relative;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: left center;
-      animation: hero-ken-burns 14s var(--ease-cinematic) forwards;
-      will-change: transform;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      object-position: center;
+      background: #050508;
+      z-index: 0;
     }
 
-    #hero .hero-mobile-img { display: none; }
+    #hero .hero-media--mobile { display: none; }
 
     @media (max-width: 768px) {
-      #hero video { display: none; }
-      #hero .hero-mobile-img { display: block; }
+      #hero .hero-media--desktop { display: none; }
+      #hero .hero-media--mobile { display: block; }
     }
 
     /* Overlay */
     #hero::after {
       content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.55) 60%, rgba(10,10,10,0.85) 100%);
-      z-index: 1;
+      display: none;
     }
 
     .hero-ambient {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 70%, rgba(72, 112, 200, 0.10) 0%, transparent 70%);
-      z-index: 2;
-      pointer-events: none;
+      display: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 3;
       text-align: center;
-      padding: 0 clamp(1rem, 5vw, 3rem);
+      width: 100%;
       max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(2.75rem, 7vw, 5rem) clamp(1rem, 5vw, 3rem) clamp(4rem, 8vw, 6rem);
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(72, 112, 200, 0.12) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(10, 10, 10, 0.96) 0%, var(--bg) 68%);
     }
 
     .hero-eyebrow {
@@ -794,15 +794,13 @@
     }
 
     .hero-scroll-hint {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
       z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.4rem;
+      margin: 2.5rem auto 0;
       animation: scroll-hint-float 2.8s ease-in-out infinite;
     }
     .hero-scroll-hint span {
@@ -815,7 +813,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      #hero video { animation: none; transform: scale(1); }
       .hero-scroll-hint { animation: none; }
     }
 
@@ -1580,23 +1577,21 @@
 
     <!-- ■ 01 HERO ■ -->
     <section id="hero" aria-label="ファーストビュー">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="./1.jpg"
-        aria-hidden="true"
-        preload="auto"
-      >
-        <source src="./club_uru_5images_final.mp4" type="video/mp4">
-      </video>
       <img
-        class="hero-mobile-img"
-        src="./469535.jpg"
+        class="hero-media hero-media--desktop"
+        src="./7.png"
         alt=""
         aria-hidden="true"
         loading="eager"
+        decoding="async"
+      />
+      <img
+        class="hero-media hero-media--mobile"
+        src="./7.png"
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        decoding="async"
       />
 
       <div class="hero-ambient" aria-hidden="true"></div>
@@ -2051,10 +2046,6 @@
       // 確認ボタン: age gateフェード → ローダー再生 → ページ表示
       confirmBtn.addEventListener('click', function() {
         sessionStorage.setItem('age_verified', 'true');
-
-        // 動画バッファリング開始
-        var heroVideo = document.querySelector('#hero video');
-        if (heroVideo) { heroVideo.play().catch(function(){}); }
 
         // Step 1: age gateをフェードアウト（0.35秒）
         gate.style.transition = 'opacity 0.35s ease';
