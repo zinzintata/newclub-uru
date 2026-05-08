@@ -156,11 +156,6 @@
       to   { transform: scale(1.00); }
     }
 
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-    }
-
     /* ============================================================
        SHIMMER TEXT
     ============================================================ */
@@ -422,124 +417,6 @@
       background: var(--gradient-gold);
       animation: loader-bar-progress 1.6s var(--ease-elegant) 0.4s forwards;
     }
-
-    /* ============================================================
-       AGE GATE
-    ============================================================ */
-    #age-gate {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #080808;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      animation: fade-in 0.5s ease both;
-      transition: opacity 0.7s ease;
-    }
-    #age-gate.is-hidden { display: none; }
-    #age-gate.is-fading { opacity: 0; pointer-events: none; }
-
-    .age-gate-inner {
-      text-align: center;
-      max-width: 480px;
-      width: 100%;
-    }
-
-    .age-gate-logo {
-      font-family: var(--font-serif-en);
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-      font-weight: 300;
-      font-style: italic;
-      letter-spacing: 0.15em;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    .age-gate-place {
-      font-family: var(--font-serif-en);
-      font-size: 10px;
-      font-weight: 300;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      display: block;
-      margin-bottom: 2.5rem;
-    }
-
-    .age-gate-divider {
-      width: 40px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
-      margin: 0 auto 2.5rem;
-    }
-
-    .age-gate-title {
-      font-family: var(--font-serif-ja);
-      font-size: clamp(0.9rem, 2.2vw, 1.1rem);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-      line-height: 1.8;
-    }
-
-    .age-gate-text {
-      font-family: var(--font-sans-ja);
-      font-size: 13px;
-      font-weight: 300;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-
-    .age-gate-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .age-btn-enter {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 280px;
-      min-height: 52px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 14px 2rem;
-      font-family: var(--font-sans-en);
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .age-btn-enter:hover { background: var(--gold); color: #050508; }
-    .age-btn-enter:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
-
-    .age-btn-leave {
-      display: inline-block;
-      color: var(--text-faint);
-      font-family: var(--font-sans-ja);
-      font-size: 12px;
-      font-weight: 300;
-      background: transparent;
-      border: none;
-      text-decoration: underline;
-      cursor: pointer;
-      letter-spacing: 0.04em;
-      padding: 8px;
-      min-height: 44px;
-    }
-    .age-btn-leave:hover { color: var(--text-muted); }
 
     /* ============================================================
        NAVIGATION
@@ -1494,23 +1371,6 @@
   </div>
 
   <!-- ============================================================
-       AGE GATE
-  ============================================================ -->
-  <div id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
-    <div class="age-gate-inner">
-      <span class="age-gate-logo text-shimmer">New Club Uru</span>
-      <span class="age-gate-place">Tokushima Nightclub</span>
-      <div class="age-gate-divider"></div>
-      <p class="age-gate-title" id="age-gate-title">このサイトは18歳未満の方の<br>閲覧をお断りしております。</p>
-      <p class="age-gate-text">あなたは18歳以上ですか？<br>年齢を確認のうえ、お進みください。</p>
-      <div class="age-gate-buttons">
-        <button class="age-btn-enter" id="age-confirm">18歳以上の方はこちら</button>
-        <a href="https://www.google.co.jp/" class="age-btn-leave">退場する（18歳未満の方）</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============================================================
        NAVIGATION
   ============================================================ -->
   <nav id="site-nav" aria-label="メインナビゲーション">
@@ -2020,89 +1880,11 @@
     'use strict';
 
     /* ==========================================
-       AGE GATE
-    ========================================== */
-    (function initAgeGate() {
-      var gate = document.getElementById('age-gate');
-      var confirmBtn = document.getElementById('age-confirm');
-      var loader = document.getElementById('loader');
-
-      if (!gate || !confirmBtn) return;
-
-      // 2回目以降の訪問: age gateをスキップ（loaderは通常通り動作）
-      if (sessionStorage.getItem('age_verified') === 'true') {
-        gate.style.display = 'none';
-        return;
-      }
-
-      // 初回訪問: loaderを即座に非表示にしてage gateのみ表示
-      if (loader) {
-        loader.style.display = 'none';
-      }
-      gate.style.display = 'flex';
-
-      setTimeout(function() { confirmBtn.focus(); }, 300);
-
-      // 確認ボタン: age gateフェード → ローダー再生 → ページ表示
-      confirmBtn.addEventListener('click', function() {
-        sessionStorage.setItem('age_verified', 'true');
-
-        // Step 1: age gateをフェードアウト（0.35秒）
-        gate.style.transition = 'opacity 0.35s ease';
-        gate.classList.add('is-fading');
-
-        setTimeout(function() {
-          gate.style.display = 'none';
-
-          if (loader) {
-            // Step 2: ローダーを表示
-            // initLoader()は初回訪問時にスキップされているため、タイマー競合なし
-            loader.style.display = 'flex';
-
-            // Step 3: .loader-innerをクローン置換 → CSSアニメーションをゼロからリスタート
-            // Chrome/Safari両対応: 新規DOM挿入が最も確実にアニメーションをリセットする
-            var loaderInner = loader.querySelector('.loader-inner');
-            if (loaderInner) {
-              var clone = loaderInner.cloneNode(true);
-              loaderInner.parentNode.replaceChild(clone, loaderInner);
-            }
-
-            // Step 4: アニメーション完了後（2.2秒）ローダーをフェードアウト
-            setTimeout(function() {
-              loader.classList.add('is-hidden');
-              setTimeout(function() {
-                loader.style.display = 'none';
-              }, 750);
-            }, 2200);
-          }
-        }, 400);
-      });
-
-      // Keyboard trap
-      gate.addEventListener('keydown', function(e) {
-        if (e.key !== 'Tab') return;
-        var focusable = Array.from(gate.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])'));
-        var first = focusable[0];
-        var last = focusable[focusable.length - 1];
-        if (e.shiftKey) {
-          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-        } else {
-          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
-      });
-    })();
-
-    /* ==========================================
        LOADER
     ========================================== */
     (function initLoader() {
       var loader = document.getElementById('loader');
       if (!loader) return;
-
-      // 初回訪問時（age gate表示中）はage gateがloaderを管理するためスキップ
-      // スキップしないと自動非表示タイマーがage gate confirm後のローダー表示と競合する
-      var ageGate = document.getElementById('age-gate');
-      if (ageGate && sessionStorage.getItem('age_verified') !== 'true') return;
 
       function hideLoader() {
         loader.classList.add('is-hidden');
